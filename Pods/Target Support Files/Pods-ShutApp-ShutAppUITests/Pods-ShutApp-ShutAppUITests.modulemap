@@ -1,0 +1,6 @@
+framework module Pods_ShutApp_ShutAppUITests {
+  umbrella header "Pods-ShutApp-ShutAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
