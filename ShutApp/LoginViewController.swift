@@ -28,13 +28,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        if let newEmail = emailTextField.text, let newPassword = passwordTextField.text {
-            Auth.auth().createUser(withEmail: newEmail, password: newPassword) { authResult, error in
-                print()
-                print("SIGNED UP!")
-            }
-        }
     }
+    
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
     }
     
