@@ -13,6 +13,11 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         if let inputEmail = emailTextField.text, let inputPassword = passwordTextField.text {
             Auth.auth().signIn(withEmail: inputEmail, password: inputPassword) { [weak self] authResult, error in
@@ -27,18 +32,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-    }
-    
-    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
 }
+
 
