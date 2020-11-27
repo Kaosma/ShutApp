@@ -110,6 +110,32 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5881B5AE2571110900667327 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5881B5AF2571111D00667327 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBD512E4256E6951003A6780 /* Main.storyboard */,
+				FBD512E9256E6954003A6780 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5881B5B02571113A00667327 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */,
+				58A395B2256FC13300D4BF2C /* SignUpViewController.swift */,
+				FBD512E2256E6951003A6780 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F1F0A7AF9CEBDE1BC0216EA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,14 +171,12 @@
 		FBD512DD256E6951003A6780 /* ShutApp */ = {
 			isa = PBXGroup;
 			children = (
+				5881B5B02571113A00667327 /* Controllers */,
+				5881B5AF2571111D00667327 /* View */,
+				5881B5AE2571110900667327 /* Model */,
 				FBD512DE256E6951003A6780 /* AppDelegate.swift */,
 				FBD512E0256E6951003A6780 /* SceneDelegate.swift */,
-				FBD512E2256E6951003A6780 /* LoginViewController.swift */,
-				58A395B2256FC13300D4BF2C /* SignUpViewController.swift */,
-				58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */,
-				FBD512E4256E6951003A6780 /* Main.storyboard */,
 				FBD512E7256E6954003A6780 /* Assets.xcassets */,
-				FBD512E9256E6954003A6780 /* LaunchScreen.storyboard */,
 				FBD512EC256E6954003A6780 /* Info.plist */,
 				FB70FC7C256E6C520065563C /* GoogleService-Info.plist */,
 			);
