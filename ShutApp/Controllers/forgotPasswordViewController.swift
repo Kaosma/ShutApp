@@ -19,7 +19,7 @@ class forgotPasswordViewController: UIViewController {
 
     }
 
-    //Forgot your password and whit an alert how explain the Resualt
+    // Handling a forgot password using an alert to communicate with the user
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         let auth = Auth.auth()
         auth.sendPasswordReset(withEmail: emailForgotPasswordTextField.text!) { (error) in

@@ -13,6 +13,10 @@
 		58A395B3256FC13300D4BF2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B2256FC13300D4BF2C /* SignUpViewController.swift */; };
 		58A395B8256FEDC700D4BF2C /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */; };
 		FB70FC7D256E6C520065563C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB70FC7C256E6C520065563C /* GoogleService-Info.plist */; };
+		FB70FC9325712F880065563C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC9225712F880065563C /* ContactsViewController.swift */; };
+		FB70FC982571300E0065563C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC962571300E0065563C /* ContactTableViewCell.swift */; };
+		FB70FC992571300E0065563C /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB70FC972571300E0065563C /* ContactTableViewCell.xib */; };
+		FB70FC9B2572A8AC0065563C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC9A2572A8AC0065563C /* Contact.swift */; };
 		FBD512DF256E6951003A6780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD512DE256E6951003A6780 /* AppDelegate.swift */; };
 		FBD512E1256E6951003A6780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD512E0256E6951003A6780 /* SceneDelegate.swift */; };
 		FBD512E3256E6951003A6780 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD512E2256E6951003A6780 /* LoginViewController.swift */; };
@@ -53,6 +57,10 @@
 		79C7E257B77A137764D1109C /* Pods-ShutApp-ShutAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD0FEBD5CEB523749C15EB2E /* Pods_ShutAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB70FC7C256E6C520065563C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB70FC9225712F880065563C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		FB70FC962571300E0065563C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		FB70FC972571300E0065563C /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		FB70FC9A2572A8AC0065563C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ShutApp/Contact.swift; sourceTree = SOURCE_ROOT; };
 		FBD512DB256E6951003A6780 /* ShutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD512DE256E6951003A6780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD512E0256E6951003A6780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 		5881B5AE2571110900667327 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB70FC9A2572A8AC0065563C /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD512E4256E6951003A6780 /* Main.storyboard */,
+				FB70FC972571300E0065563C /* ContactTableViewCell.xib */,
 				FBD512E9256E6954003A6780 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -132,6 +142,8 @@
 				58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */,
 				58A395B2256FC13300D4BF2C /* SignUpViewController.swift */,
 				FBD512E2256E6951003A6780 /* LoginViewController.swift */,
+				FB70FC9225712F880065563C /* ContactsViewController.swift */,
+				FB70FC962571300E0065563C /* ContactTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +325,7 @@
 				FBD512EB256E6954003A6780 /* LaunchScreen.storyboard in Resources */,
 				FB70FC7D256E6C520065563C /* GoogleService-Info.plist in Resources */,
 				FBD512E8256E6954003A6780 /* Assets.xcassets in Resources */,
+				FB70FC992571300E0065563C /* ContactTableViewCell.xib in Resources */,
 				FBD512E6256E6951003A6780 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +457,9 @@
 				FBD512E3256E6951003A6780 /* LoginViewController.swift in Sources */,
 				FBD512DF256E6951003A6780 /* AppDelegate.swift in Sources */,
 				58A395B3256FC13300D4BF2C /* SignUpViewController.swift in Sources */,
+				FB70FC982571300E0065563C /* ContactTableViewCell.swift in Sources */,
+				FB70FC9B2572A8AC0065563C /* Contact.swift in Sources */,
+				FB70FC9325712F880065563C /* ContactsViewController.swift in Sources */,
 				58A395B8256FEDC700D4BF2C /* forgotPasswordViewController.swift in Sources */,
 				FBD512E1256E6951003A6780 /* SceneDelegate.swift in Sources */,
 			);

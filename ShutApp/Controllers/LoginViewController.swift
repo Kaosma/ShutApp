@@ -17,17 +17,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    // Authenticating and login the user
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         if let inputEmail = emailTextField.text, let inputPassword = passwordTextField.text {
             Auth.auth().signIn(withEmail: inputEmail, password: inputPassword) { [weak self] authResult, error in
-                guard self != nil else {
-                    print()
-                    print("NOT LOGGED IN!")
-                    return
+                if let e = error {
+                    print(e)
+                } else {
+                    self!.performSegue(withIdentifier: "GoToContactsScreen", sender: self)
                 }
-                print()
-                print("LOGGED IN!")
             }
         }
     }
