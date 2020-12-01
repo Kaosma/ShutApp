@@ -11,13 +11,14 @@ import Firebase
 
 class SettingsViewController: UIViewController {
 
-  
     let currentUser = Auth.auth().currentUser!
     let db = Firestore.firestore()
     @IBOutlet weak var nameTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Getting the username from the current logged in user
         let collection = db.collection("users").document(self.currentUser.email!)
         collection.getDocument { (document, err) in
             if let document = document, document.exists {
