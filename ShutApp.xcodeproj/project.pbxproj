@@ -12,6 +12,7 @@
 		4FAFBD63E41A77139E995E6B /* Pods_ShutAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0FEBD5CEB523749C15EB2E /* Pods_ShutAppTests.framework */; };
 		58A395B3256FC13300D4BF2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B2256FC13300D4BF2C /* SignUpViewController.swift */; };
 		58A395B8256FEDC700D4BF2C /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */; };
+		58C14271257513B4001B2FFF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C14270257513B4001B2FFF /* SettingsViewController.swift */; };
 		FB70FC7D256E6C520065563C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB70FC7C256E6C520065563C /* GoogleService-Info.plist */; };
 		FB70FC9325712F880065563C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC9225712F880065563C /* ContactsViewController.swift */; };
 		FB70FC982571300E0065563C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC962571300E0065563C /* ContactTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 		39DC04713203FEE157609141 /* Pods-ShutApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp/Pods-ShutApp.debug.xcconfig"; sourceTree = "<group>"; };
 		58A395B2256FC13300D4BF2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
+		58C14270257513B4001B2FFF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E0623A7707CAEE2EB235762 /* Pods_ShutApp_ShutAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp_ShutAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		669BE730F5E7A4410A142E11 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789BF88C782EA874D3B86279 /* Pods_ShutApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				FBD512E2256E6951003A6780 /* LoginViewController.swift */,
 				FB70FC9225712F880065563C /* ContactsViewController.swift */,
 				FB70FC962571300E0065563C /* ContactTableViewCell.swift */,
+				58C14270257513B4001B2FFF /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				FB70FC9325712F880065563C /* ContactsViewController.swift in Sources */,
 				58A395B8256FEDC700D4BF2C /* forgotPasswordViewController.swift in Sources */,
 				FBD512E1256E6951003A6780 /* SceneDelegate.swift in Sources */,
+				58C14271257513B4001B2FFF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

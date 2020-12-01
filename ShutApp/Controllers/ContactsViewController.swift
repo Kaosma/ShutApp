@@ -39,12 +39,12 @@ class ContactsViewController: UIViewController {
                     // If the new contact's email exists -> Add them
                     if let document = document, document.exists {
                         let dataDescription = document.data()
-                        if let contactId = dataDescription!["id"] as? String {
+                        if let contactId = dataDescription!["id"] as? String, let contactUsername = dataDescription!["name"] as? String {
                             
                             // Add contact to the user's contacts in the database
                             let contactsCollection =
                                 self.db.collection("users").document(self.currentUser.email!).collection("contacts")
-                            contactsCollection.document(contactEmail).setData(["id": contactId as Any]) // <------------------
+                            contactsCollection.document(contactEmail).setData(["id": contactId as Any,"name": contactUsername as Any]) // <------------------
                             self.loadContactsFromDatabase()
                             let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
                             
@@ -77,6 +77,10 @@ class ContactsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //Segue to settings
+    @IBAction func goToSettingsButton(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "GoToSettings", sender: self)
+    }
     
     // MARK: Other Functions
     // Load the user's contacts into the TableView
@@ -88,9 +92,9 @@ class ContactsViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    if let contactID = document.data()["id"] as? String{
+                    if let contactID = document.data()["id"] as? String, let contactUsername = document.data()["name"] as? String{
                         let contactEmail = document.documentID
-                        let contact = Contact(email: contactEmail, id: contactID)
+                        let contact = Contact(username: contactUsername, email: contactEmail, id: contactID)
                         
                         self.contacts.append(contact)
                         DispatchQueue.main.async {
@@ -108,6 +112,8 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         contactTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
         loadContactsFromDatabase()
+     
+
     }
 
 }
@@ -125,7 +131,8 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
         let contact = contacts[indexPath.row]
-        cell.nameLabel.text = contact.email
+        cell.nameLabel.text = contact.username
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return cell
     }
     
@@ -133,4 +140,9 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    
 }

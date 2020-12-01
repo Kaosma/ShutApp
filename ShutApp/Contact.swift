@@ -8,9 +8,10 @@
 
 import Foundation
 
+
 // Contact object
 struct Contact {
-    //let name : String
+    let username : String
     let email : String
     let id : String
 }

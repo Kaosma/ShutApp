@@ -13,9 +13,14 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    var contacts : [Contact] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
     }
     
     // Authenticating and login the user
@@ -26,8 +31,17 @@ class LoginViewController: UIViewController {
                     print(e)
                 } else {
                     self!.performSegue(withIdentifier: "GoToContactsScreen", sender: self)
+                    //print("Logged in user! name: \(String(describing: contacts.name))")
                 }
             }
+        }
+    }
+    
+    func checkUserInfo(){
+        if ((Auth.auth().currentUser?.uid) != nil) {
+            print(Auth.auth().currentUser?.uid as Any)
+            self.performSegue(withIdentifier: "GoToContactsScreen", sender: self)
+           
         }
     }
     
