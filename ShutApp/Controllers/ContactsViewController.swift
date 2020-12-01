@@ -17,7 +17,7 @@ class ContactsViewController: UIViewController {
     let db = Firestore.firestore()
     let currentUser = Auth.auth().currentUser!
     var contacts : [Contact] = []
-    
+    var filteredContacts : [Contact] = []
     
     // MARK: IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
@@ -33,35 +33,45 @@ class ContactsViewController: UIViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             if !textField.text!.trimmingCharacters(in: .whitespaces).isEmpty {
                 let contactEmail = textField.text!
-                let docRef = self.db.collection("users").document(contactEmail)
                 
-                docRef.getDocument { (document, error) in
-                    // If the new contact's email exists -> Add them
-                    if let document = document, document.exists {
-                        let dataDescription = document.data()
-                        if let contactId = dataDescription!["id"] as? String, let contactUsername = dataDescription!["name"] as? String {
-                            
-                            // Add contact to the user's contacts in the database
-                            let contactsCollection =
-                                self.db.collection("users").document(self.currentUser.email!).collection("contacts")
-                            contactsCollection.document(contactEmail).setData(["id": contactId as Any,"name": contactUsername as Any]) // <------------------
-                            self.loadContactsFromDatabase()
-                            let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
+                if contactEmail != self.currentUser.email {
+                    let docRef = self.db.collection("users").document(contactEmail)
+                    
+                    docRef.getDocument { (document, error) in
+                        // If the new contact's email exists -> Add them
+                        if let document = document, document.exists {
+                            let dataDescription = document.data()
+                            if let contactId = dataDescription!["id"] as? String, let contactUsername = dataDescription!["name"] as? String {
+                                
+                                // Add contact to the user's contacts in the database
+                                let contactsCollection =
+                                    self.db.collection("users").document(self.currentUser.email!).collection("contacts")
+                                contactsCollection.document(contactEmail).setData(["id": contactId as Any, "name": contactUsername as Any])
+                                self.loadContactsFromDatabase()
+                                let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
+                                
+                                dismissAlert.addAction(UIAlertAction(title: "OK",
+                                                                     style: .cancel, handler: nil))
+
+                                self.present(dismissAlert, animated: true, completion: nil)
+                            }
+                        // If the new contact's email doesn't exist -> Let the user know with an alert
+                        } else {
+                            let dismissAlert = UIAlertController(title: "User not found", message: "", preferredStyle: .alert)
                             
                             dismissAlert.addAction(UIAlertAction(title: "OK",
                                                                  style: .cancel, handler: nil))
 
                             self.present(dismissAlert, animated: true, completion: nil)
                         }
-                    // If the new contact's email doesn't exist -> Let the user know with an alert
-                    } else {
-                        let dismissAlert = UIAlertController(title: "User not found", message: "", preferredStyle: .alert)
-                        
-                        dismissAlert.addAction(UIAlertAction(title: "OK",
-                                                             style: .cancel, handler: nil))
-
-                        self.present(dismissAlert, animated: true, completion: nil)
                     }
+                } else {
+                    let dismissAlert = UIAlertController(title: "User not found", message: "", preferredStyle: .alert)
+                    
+                    dismissAlert.addAction(UIAlertAction(title: "OK",
+                                                         style: .cancel, handler: nil))
+
+                    self.present(dismissAlert, animated: true, completion: nil)
                 }
             } else {}
         }
@@ -97,6 +107,7 @@ class ContactsViewController: UIViewController {
                         let contact = Contact(username: contactUsername, email: contactEmail, id: contactID)
                         
                         self.contacts.append(contact)
+                        self.filterContacts()
                         DispatchQueue.main.async {
                             self.contactTableView.reloadData()
                         }
@@ -106,14 +117,20 @@ class ContactsViewController: UIViewController {
         }
     }
     
+    // Filtering the contacts when using the SearchBar
+    func filterContacts(){
+        filteredContacts = []
+        for contact in contacts {
+            filteredContacts.append(contact)
+        }
+        contactTableView.reloadData()
+    }
     
     // MARK: Main Program
     override func viewDidLoad() {
         super.viewDidLoad()
         contactTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
         loadContactsFromDatabase()
-     
-
     }
 
 }
@@ -124,15 +141,14 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Return number of cells in tableview -> Size of the contacts Array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contacts.count
+        filteredContacts.count
     }
     
     // Creating each TableViewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
-        let contact = contacts[indexPath.row]
+        let contact = filteredContacts[indexPath.row]
         cell.nameLabel.text = contact.username
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return cell
     }
     
@@ -145,4 +161,28 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+// MARK: SearchBar Functionality
+extension ContactsViewController: UISearchBarDelegate {
+    
+    // Searchbar will always control when it's being interracted with
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredContacts = []
+        
+        // If the searchbarText contains an empty string the filtered data will only be the contacts array
+        if searchText == "" {
+            filterContacts()
+            
+        // Else check if the array has elements that contains the searchbarText and display them as a filtered list
+        } else {
+            for data in contacts {
+                if data.username.lowercased().contains(searchText.lowercased()) {
+                    filteredContacts.append(data)
+                }
+            }
+        }
+        contactTableView.reloadData()
+    }
 }
