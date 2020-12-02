@@ -31,7 +31,6 @@ class forgotPasswordViewController: UIViewController {
             let alert = UIAlertController(title: "Done", message: "A password reset has been sent!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in self.performSegue(withIdentifier: "backToLoginPageSegue", sender: self) }))
             self.present(alert, animated: true, completion: nil)
-             
         }
     }
 }
