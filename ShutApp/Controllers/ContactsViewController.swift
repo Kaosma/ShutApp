@@ -48,7 +48,7 @@ class ContactsViewController: UIViewController {
                                 let contactsCollection =
                                     self.db.collection("users").document(self.currentUser.email!).collection("contacts")
                                 contactsCollection.document(contactEmail).setData(["id": contactId as Any, "name": contactUsername as Any])
-                                self.loadContactsFromDatabase()
+                                self.loadContactsFromDatabase(willFilter: true)
                                 let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
                                 
                                 dismissAlert.addAction(UIAlertAction(title: "OK",
@@ -95,7 +95,7 @@ class ContactsViewController: UIViewController {
     
     // MARK: Other Functions
     // Load the user's contacts into the TableView
-    func loadContactsFromDatabase(){
+    func loadContactsFromDatabase(willFilter: Bool){
         contacts = []
         let collection = db.collection("users").document(self.currentUser.email!).collection("contacts")
         collection.getDocuments() { (querySnapshot, err) in
@@ -108,7 +108,9 @@ class ContactsViewController: UIViewController {
                         let contact = Contact(username: contactUsername, email: contactEmail, id: contactID)
                         
                         self.contacts.append(contact)
-                        self.filterContacts()
+                        if willFilter {
+                            self.filterContacts()
+                        }
                         DispatchQueue.main.async {
                             self.contactTableView.reloadData()
                         }
@@ -130,12 +132,29 @@ class ContactsViewController: UIViewController {
     // MARK: Main Program
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
-        loadContactsFromDatabase()
+        loadContactsFromDatabase(willFilter:true)
     }
 
 }
 
+extension ContactsViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            let item = self.filteredContacts[indexPath.row]
+            self.db.collection("users").document(self.currentUser.email!).collection("contacts").document(item.email).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            self.filteredContacts.remove(at: indexPath.row)
+            self.loadContactsFromDatabase(willFilter:false)
+        }
+        return [deleteAction]
+    }
+}
 
 // MARK: TableView Functions
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -147,9 +166,12 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Creating each TableViewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         let contact = filteredContacts[indexPath.row]
-        cell.nameLabel.text = contact.username
+        let name = cell.contentView.viewWithTag(1) as! UILabel
+        //let content = cell.contentView.viewWithTag(2) as! UILabel
+        name.text = contact.username
         return cell
     }
     
