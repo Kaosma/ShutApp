@@ -178,6 +178,10 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     // Handling a selected TableViewCell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ChatViewController()
+        vc.title = "Chat"
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
