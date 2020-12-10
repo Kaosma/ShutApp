@@ -21,8 +21,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         checkUserInfo()
-
-        
     }
     
     // Authenticating and login the user
@@ -33,7 +31,6 @@ class LoginViewController: UIViewController {
                     print(e)
                 } else {
                     self!.performSegue(withIdentifier: "GoToContactsScreen", sender: self)
-                    //print("Logged in user! name: \(String(describing: contacts.name))")
                 }
             }
         }
@@ -41,7 +38,6 @@ class LoginViewController: UIViewController {
     
     func checkUserInfo(){
         if ((Auth.auth().currentUser?.uid) != nil) {
-            print(Auth.auth().currentUser?.uid as Any)
             self.performSegue(withIdentifier: "GoToContactsScreen", sender: self)
         }
     }

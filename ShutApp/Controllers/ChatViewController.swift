@@ -25,6 +25,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType{
         return messages[indexPath.section]
     }
+    
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
@@ -36,8 +37,5 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messagesDisplayDelegate = self
         messages.append(Message(sender: currentUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("Hello Dude")))
     }
-    
-    
-    
     
 }

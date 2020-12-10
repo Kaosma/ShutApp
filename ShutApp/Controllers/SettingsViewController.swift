@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
 
     var credential: AuthCredential?
     @IBOutlet weak var EmailTextField: UITextField!
-    let currentUser = Auth.auth().currentUser!
+    let currentUser = CurrentUser()
     let db = Firestore.firestore()
     @IBOutlet weak var nameTextField: UILabel!
     
@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController {
     //Change password by reset link
     @IBAction func changePasswordButton(_ sender: UIButton) {
         let auth = Auth.auth()
-        auth.sendPasswordReset(withEmail: currentUser.email!) { (error) in
+        auth.sendPasswordReset(withEmail: currentUser.email) { (error) in
             if let error = error {
                 let alert = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -58,7 +58,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Getting the username from the current logged in user
-        let collection = db.collection("users").document(self.currentUser.email!)
+        let collection = db.collection("users").document(self.currentUser.email)
         collection.getDocument { (document, err) in
             if let document = document, document.exists {
                     let dataDescription = document.data()
