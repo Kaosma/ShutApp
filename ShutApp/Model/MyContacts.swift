@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+// Class containing the logged in user's contacts
+
 class MyContacts {
     let db = Firestore.firestore()
     let currentUser = CurrentUser()

@@ -18,6 +18,7 @@ class ContactsViewController: UIViewController {
     let db = Firestore.firestore()
     let currentUser = CurrentUser()
     var contactController = MyContacts()
+    let chatSegueId = "segueToChatViewController"
     
     // MARK: IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
@@ -100,6 +101,8 @@ class ContactsViewController: UIViewController {
         contactController.getContactsFromDatabase(tableView: contactTableView, filter: willFilter)
     }
     
+
+    
     // MARK: Main Program
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,15 +152,26 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     // Handling a selected TableViewCell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let contact = self.contactController.filteredContacts[indexPath.row]
         let vc = ChatViewController()
-        vc.title = "Chat"
+        vc.chatContact = contact
+        vc.title = contact.username
         navigationController?.pushViewController(vc, animated: true)
         
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    // MARK: - Navigation
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        
+    }
     
 }
 

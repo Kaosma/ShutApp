@@ -414,6 +414,7 @@
                     <connections>
                         <outlet property="contactTableView" destination="Wef-4X-9EF" id="aHs-gO-DAQ"/>
                         <segue destination="MR9-rs-ABV" kind="show" identifier="GoToSettings" id="CnD-oc-A9m"/>
+                        <segue destination="DgG-uC-82R" kind="presentation" identifier="segueToChatViewController" modalPresentationStyle="fullScreen" id="3lk-uQ-vUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0u-Y2-BVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -527,6 +528,7 @@
                         <viewLayoutGuide key="safeArea" id="OlH-MP-DLg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="y2Y-xs-rId"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyw-0j-Y6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

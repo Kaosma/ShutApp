@@ -9,9 +9,16 @@
 import Foundation
 import Firebase
 
-struct CurrentUser {
-    let db = Firestore.firestore()
+// CurrentUser object
+
     
+
+struct CurrentUser {
+
+    let db = Firestore.firestore()
+
+    
+
     var email : String {
         var userEmail = ""
         if let fetchedEmail = Auth.auth().currentUser!.email {
@@ -19,14 +26,17 @@ struct CurrentUser {
         }
         return userEmail
     }
+    
     var id : String {
         var userId = ""
         let fetchedId = Auth.auth().currentUser!.uid
         userId = fetchedId
         return userId
+
     }
-    
+
     // Initiate the username
+
     var username : String {
         let docRef = self.db.collection("users").document(email)
         var name = ""
