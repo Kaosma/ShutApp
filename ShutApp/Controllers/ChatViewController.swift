@@ -12,39 +12,43 @@ import Firebase
 
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
-    let id = Auth.auth().currentUser!.uid
-    var chatContact = Contact(username: "", email: "", id: "")
-
+    let messageController = MyMessages()
     
-    let currentUser = Sender(senderId: "self", displayName: "HEJ")
-    let secoundUser = Sender(senderId: "test", displayName: "HEJSAN")
-    var messages = [Message]()
+    let currentUser = Sender(senderEmail: CurrentUser().email, displayName: CurrentUser().username)
+    var contactUser = Sender(senderEmail: "", displayName: "")
 
     func currentSender () -> SenderType  {
         return currentUser
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType{
-        return messages[indexPath.section]
+            return messageController.messages[indexPath.section]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messageController.messages.count
     }
     
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-           return .white
-       }
+            return .white
+    }
     
-    
+    func loadMessages(sender: Sender) {
+        messageController.getMessagesFromDatabase(collectionView: messagesCollectionView, senderUser: sender)
+    }
     func sendButtonItemBar () {
         messageInputBar.sendButton.configure {
-                   $0.setSize(CGSize(width: 370, height: 36), animated: false)
-                   $0.isEnabled = false
-                   $0.title = ""
-                   $0.image = UIImage(named: "baseline_send_black_18dp")
-                   $0.tintColor = UIColor.blue
-                   $0.setTitleColor(UIColor.purple, for: .normal)
-                   $0.setTitleColor(UIColor(white: 0.8, alpha: 1), for: .disabled)
-                   $0.titleLabel?.font = UIFont.systemFont(ofSize: 10, weight: .bold)
-               }
+            $0.setSize(CGSize(width: 370, height: 36), animated: false)
+            $0.isEnabled = false
+            $0.title = ""
+            $0.image = UIImage(named: "baseline_send_black_18dp")
+            $0.tintColor = UIColor.blue
+            $0.setTitleColor(UIColor.purple, for: .normal)
+            $0.setTitleColor(UIColor(white: 0.8, alpha: 1), for: .disabled)
+            $0.titleLabel?.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        }
     }
+    
     func sendItemBar () {
 
         self.messageInputBar.inputTextView.placeholder = " Aa"
@@ -64,10 +68,6 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
             return isFromCurrentSender(message: message) ? UIColor.purple : UIColor.lightGray
-        }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return messages.count
     }
     
     override func viewDidLoad() {
@@ -75,18 +75,9 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        messages.append(Message(sender: currentUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("Hello Dude")))
-        messages.append(Message(sender: secoundUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("hej Alex")))
-        messages.append(Message(sender: currentUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("Hello Dude")))
-        messages.append(Message(sender: secoundUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("hej Alex")))
-        messages.append(Message(sender: currentUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("Hello Dude")))
-        messages.append(Message(sender: secoundUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("hej Alex")))
-        messages.append(Message(sender: currentUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("Hello Dude")))
-        messages.append(Message(sender: secoundUser, messageId: "1234", sentDate: Date().addingTimeInterval(-10000), kind: .text("hej Alex")))
-        sendItemBar ()
-        sendButtonItemBar ()
-        print(chatContact)
-        
+        loadMessages(sender: contactUser)
+        sendItemBar()
+        sendButtonItemBar()
     }
     
 }

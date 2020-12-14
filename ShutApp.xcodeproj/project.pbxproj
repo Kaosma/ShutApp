@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3593D15016E571C31B3DE984 /* Pods_ShutApp_ShutAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F95B1373C613D9A9763DAD2 /* Pods_ShutApp_ShutAppUITests.framework */; };
 		58A395B3256FC13300D4BF2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B2256FC13300D4BF2C /* SignUpViewController.swift */; };
 		58A395B8256FEDC700D4BF2C /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */; };
 		58B40BE3257E6615003DE656 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B40BE2257E6615003DE656 /* ChatViewController.swift */; };
@@ -15,8 +14,9 @@
 		58B40BED257E6702003DE656 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B40BEC257E6702003DE656 /* Message.swift */; };
 		58C14271257513B4001B2FFF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C14270257513B4001B2FFF /* SettingsViewController.swift */; };
 		58DA6A332577B18E00317936 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA6A322577B18E00317936 /* TermsViewController.swift */; };
-		6A18A9C437C4B585F9A0C351 /* Pods_ShutApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E45F0D0E452939106C0DAE /* Pods_ShutApp.framework */; };
-		CCB43BFEB832D63C04D6D4D6 /* Pods_ShutAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C35CAFD6F7F5AA6F983EF58 /* Pods_ShutAppTests.framework */; };
+		7D910B4D9337044D3926448A /* Pods_ShutApp_ShutAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802FA5B4BC9C9CEEF2074FEC /* Pods_ShutApp_ShutAppUITests.framework */; };
+		A6C7B0ED9FFB7B71D1EC8BCD /* Pods_ShutAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B8D260C97BF8CE9272DDAF /* Pods_ShutAppTests.framework */; };
+		BDDD78CB6F4AF18A63B5D5CE /* Pods_ShutApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B946A5ED453E60FC8D9875 /* Pods_ShutApp.framework */; };
 		FB70FC7D256E6C520065563C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB70FC7C256E6C520065563C /* GoogleService-Info.plist */; };
 		FB70FC9325712F880065563C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC9225712F880065563C /* ContactsViewController.swift */; };
 		FB70FC9B2572A8AC0065563C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70FC9A2572A8AC0065563C /* Contact.swift */; };
@@ -30,6 +30,7 @@
 		FBD51301256E6955003A6780 /* ShutAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51300256E6955003A6780 /* ShutAppUITests.swift */; };
 		FBD6FDEC2580E1C8002E81B3 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD6FDEB2580E1C8002E81B3 /* CurrentUser.swift */; };
 		FBD6FDEE2581041B002E81B3 /* MyContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD6FDED2581041B002E81B3 /* MyContacts.swift */; };
+		FBD6FDF2258793A0002E81B3 /* MyMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD6FDF1258793A0002E81B3 /* MyMessages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C35CAFD6F7F5AA6F983EF58 /* Pods_ShutAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DF52C0A7B08DEF6A845C498 /* Pods-ShutAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShutAppTests/Pods-ShutAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		2F95B1373C613D9A9763DAD2 /* Pods_ShutApp_ShutAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp_ShutAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C5BF8E1A528CF4DCB9D2773 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1CD561F73BF99DEED80830F9 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E59F8E443DB8A7806433471 /* Pods-ShutAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutAppTests.release.xcconfig"; path = "Target Support Files/Pods-ShutAppTests/Pods-ShutAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		58A395B2256FC13300D4BF2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		58A395B7256FEDC700D4BF2C /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 		58B40BE2257E6615003DE656 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -61,11 +60,13 @@
 		58B40BEC257E6702003DE656 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		58C14270257513B4001B2FFF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		58DA6A322577B18E00317936 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
-		7F626C5E3C122C064DD5C979 /* Pods-ShutApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp.release.xcconfig"; path = "Target Support Files/Pods-ShutApp/Pods-ShutApp.release.xcconfig"; sourceTree = "<group>"; };
-		80D2779AFE23166A36B9E526 /* Pods-ShutApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp/Pods-ShutApp.debug.xcconfig"; sourceTree = "<group>"; };
-		90A9D3167525F4F472AA773D /* Pods-ShutAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ShutAppTests/Pods-ShutAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B37D89F0627338B42CBA0FA6 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E45F0D0E452939106C0DAE /* Pods_ShutApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E7C8814D650ECBCA7E34BD /* Pods-ShutApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp/Pods-ShutApp.debug.xcconfig"; sourceTree = "<group>"; };
+		797CD69561F02FA06C9EAFBB /* Pods-ShutApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp.release.xcconfig"; path = "Target Support Files/Pods-ShutApp/Pods-ShutApp.release.xcconfig"; sourceTree = "<group>"; };
+		802FA5B4BC9C9CEEF2074FEC /* Pods_ShutApp_ShutAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp_ShutAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EE150CC2ED408446FC4806 /* Pods-ShutAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ShutAppTests/Pods-ShutAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBF6DF52B469559C7CCA5766 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShutApp-ShutAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3B8D260C97BF8CE9272DDAF /* Pods_ShutAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B946A5ED453E60FC8D9875 /* Pods_ShutApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShutApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB70FC7C256E6C520065563C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB70FC9225712F880065563C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		FB70FC9A2572A8AC0065563C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ShutApp/Contact.swift; sourceTree = SOURCE_ROOT; };
@@ -85,6 +86,7 @@
 		FBD51302256E6955003A6780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD6FDEB2580E1C8002E81B3 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		FBD6FDED2581041B002E81B3 /* MyContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContacts.swift; sourceTree = "<group>"; };
+		FBD6FDF1258793A0002E81B3 /* MyMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A18A9C437C4B585F9A0C351 /* Pods_ShutApp.framework in Frameworks */,
+				BDDD78CB6F4AF18A63B5D5CE /* Pods_ShutApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB43BFEB832D63C04D6D4D6 /* Pods_ShutAppTests.framework in Frameworks */,
+				A6C7B0ED9FFB7B71D1EC8BCD /* Pods_ShutAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,32 +110,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3593D15016E571C31B3DE984 /* Pods_ShutApp_ShutAppUITests.framework in Frameworks */,
+				7D910B4D9337044D3926448A /* Pods_ShutApp_ShutAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2323217DEF8F586A69678B2D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C9E45F0D0E452939106C0DAE /* Pods_ShutApp.framework */,
-				2F95B1373C613D9A9763DAD2 /* Pods_ShutApp_ShutAppUITests.framework */,
-				1C35CAFD6F7F5AA6F983EF58 /* Pods_ShutAppTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		54EF5723FD020606D3C28461 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				80D2779AFE23166A36B9E526 /* Pods-ShutApp.debug.xcconfig */,
-				7F626C5E3C122C064DD5C979 /* Pods-ShutApp.release.xcconfig */,
-				B37D89F0627338B42CBA0FA6 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */,
-				4C5BF8E1A528CF4DCB9D2773 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */,
-				90A9D3167525F4F472AA773D /* Pods-ShutAppTests.debug.xcconfig */,
-				2DF52C0A7B08DEF6A845C498 /* Pods-ShutAppTests.release.xcconfig */,
+				76E7C8814D650ECBCA7E34BD /* Pods-ShutApp.debug.xcconfig */,
+				797CD69561F02FA06C9EAFBB /* Pods-ShutApp.release.xcconfig */,
+				DBF6DF52B469559C7CCA5766 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */,
+				1CD561F73BF99DEED80830F9 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */,
+				A5EE150CC2ED408446FC4806 /* Pods-ShutAppTests.debug.xcconfig */,
+				2E59F8E443DB8A7806433471 /* Pods-ShutAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,6 +138,7 @@
 				FBD6FDEB2580E1C8002E81B3 /* CurrentUser.swift */,
 				58B40BEC257E6702003DE656 /* Message.swift */,
 				58B40BE7257E667C003DE656 /* Sender.swift */,
+				FBD6FDF1258793A0002E81B3 /* MyMessages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +166,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		AF92960B8CB060A078B28234 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6B946A5ED453E60FC8D9875 /* Pods_ShutApp.framework */,
+				802FA5B4BC9C9CEEF2074FEC /* Pods_ShutApp_ShutAppUITests.framework */,
+				E3B8D260C97BF8CE9272DDAF /* Pods_ShutAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBD512D2256E6951003A6780 = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +184,7 @@
 				FBD512FF256E6955003A6780 /* ShutAppUITests */,
 				FBD512DC256E6951003A6780 /* Products */,
 				54EF5723FD020606D3C28461 /* Pods */,
-				2323217DEF8F586A69678B2D /* Frameworks */,
+				AF92960B8CB060A078B28234 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,11 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBD51305256E6955003A6780 /* Build configuration list for PBXNativeTarget "ShutApp" */;
 			buildPhases = (
-				3ADC9394B94E74F44B0C8F58 /* [CP] Check Pods Manifest.lock */,
+				6C5D05B2A13C012ED5A3BE01 /* [CP] Check Pods Manifest.lock */,
 				FBD512D7256E6951003A6780 /* Sources */,
 				FBD512D8256E6951003A6780 /* Frameworks */,
 				FBD512D9256E6951003A6780 /* Resources */,
-				FC3AB53AE19CBDCA7F01D963 /* [CP] Embed Pods Frameworks */,
+				5A4167D6D52382DD979660B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,7 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBD51308256E6955003A6780 /* Build configuration list for PBXNativeTarget "ShutAppTests" */;
 			buildPhases = (
-				4D7023E6FA12E55DEA1B0089 /* [CP] Check Pods Manifest.lock */,
+				83672229AF52AAC081106A9D /* [CP] Check Pods Manifest.lock */,
 				FBD512ED256E6954003A6780 /* Sources */,
 				FBD512EE256E6954003A6780 /* Frameworks */,
 				FBD512EF256E6954003A6780 /* Resources */,
@@ -273,11 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBD5130B256E6955003A6780 /* Build configuration list for PBXNativeTarget "ShutAppUITests" */;
 			buildPhases = (
-				A6F8C04FE388C71CC8D96058 /* [CP] Check Pods Manifest.lock */,
+				0CA4EE87348873D180D9D1EC /* [CP] Check Pods Manifest.lock */,
 				FBD512F8256E6955003A6780 /* Sources */,
 				FBD512F9256E6955003A6780 /* Frameworks */,
 				FBD512FA256E6955003A6780 /* Resources */,
-				15075545E2F93EBCB166AD88 /* [CP] Embed Pods Frameworks */,
+				D22B41DCB965E02F52F388EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,68 +364,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15075545E2F93EBCB166AD88 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3ADC9394B94E74F44B0C8F58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShutApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D7023E6FA12E55DEA1B0089 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ShutAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6F8C04FE388C71CC8D96058 /* [CP] Check Pods Manifest.lock */ = {
+		0CA4EE87348873D180D9D1EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,7 +386,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC3AB53AE19CBDCA7F01D963 /* [CP] Embed Pods Frameworks */ = {
+		5A4167D6D52382DD979660B4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,6 +403,67 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShutApp/Pods-ShutApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6C5D05B2A13C012ED5A3BE01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShutApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83672229AF52AAC081106A9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShutAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D22B41DCB965E02F52F388EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShutApp-ShutAppUITests/Pods-ShutApp-ShutAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -472,6 +475,7 @@
 				FBD512E3256E6951003A6780 /* LoginViewController.swift in Sources */,
 				FBD512DF256E6951003A6780 /* AppDelegate.swift in Sources */,
 				58A395B3256FC13300D4BF2C /* SignUpViewController.swift in Sources */,
+				FBD6FDF2258793A0002E81B3 /* MyMessages.swift in Sources */,
 				58DA6A332577B18E00317936 /* TermsViewController.swift in Sources */,
 				FB70FC9B2572A8AC0065563C /* Contact.swift in Sources */,
 				58B40BE8257E667C003DE656 /* Sender.swift in Sources */,
@@ -652,7 +656,7 @@
 		};
 		FBD51306256E6955003A6780 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80D2779AFE23166A36B9E526 /* Pods-ShutApp.debug.xcconfig */;
+			baseConfigurationReference = 76E7C8814D650ECBCA7E34BD /* Pods-ShutApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -670,7 +674,7 @@
 		};
 		FBD51307256E6955003A6780 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F626C5E3C122C064DD5C979 /* Pods-ShutApp.release.xcconfig */;
+			baseConfigurationReference = 797CD69561F02FA06C9EAFBB /* Pods-ShutApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,7 +692,7 @@
 		};
 		FBD51309256E6955003A6780 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90A9D3167525F4F472AA773D /* Pods-ShutAppTests.debug.xcconfig */;
+			baseConfigurationReference = A5EE150CC2ED408446FC4806 /* Pods-ShutAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -710,7 +714,7 @@
 		};
 		FBD5130A256E6955003A6780 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DF52C0A7B08DEF6A845C498 /* Pods-ShutAppTests.release.xcconfig */;
+			baseConfigurationReference = 2E59F8E443DB8A7806433471 /* Pods-ShutAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -732,7 +736,7 @@
 		};
 		FBD5130C256E6955003A6780 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B37D89F0627338B42CBA0FA6 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */;
+			baseConfigurationReference = DBF6DF52B469559C7CCA5766 /* Pods-ShutApp-ShutAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -752,7 +756,7 @@
 		};
 		FBD5130D256E6955003A6780 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C5BF8E1A528CF4DCB9D2773 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */;
+			baseConfigurationReference = 1CD561F73BF99DEED80830F9 /* Pods-ShutApp-ShutAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

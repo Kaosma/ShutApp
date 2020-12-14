@@ -154,7 +154,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let contact = self.contactController.filteredContacts[indexPath.row]
         let vc = ChatViewController()
-        vc.chatContact = contact
+        vc.contactUser = Sender(senderEmail: contact.email, displayName: contact.username)
         vc.title = contact.username
         navigationController?.pushViewController(vc, animated: true)
         

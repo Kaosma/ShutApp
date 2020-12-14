@@ -10,6 +10,6 @@ import Foundation
 import MessageKit
 
 struct Sender: SenderType {
-    var senderId : String
+    var senderEmail : String
     var displayName: String
 }
