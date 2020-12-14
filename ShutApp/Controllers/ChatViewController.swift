@@ -9,9 +9,11 @@
 import UIKit
 import MessageKit
 import Firebase
+import InputBarAccessoryView
+import MessageInputBar
 
-
-class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
+class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate, MessageInputBarDelegate, InputBarAccessoryViewDelegate {
+    
     let messageController = MyMessages()
     
     let currentUser = Sender(senderEmail: CurrentUser().email, displayName: CurrentUser().username)
@@ -33,10 +35,19 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
             return .white
     }
     
+    // Loading all the messages from and to a contact
     func loadMessages(sender: Sender) {
         messageController.getMessagesFromDatabase(collectionView: messagesCollectionView, senderUser: sender)
     }
-    func sendButtonItemBar () {
+    
+    // Sending a message to a contact
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        if let inputText = messageInputBar.inputTextView.text {
+            messageController.sendMessage(collectionView: messagesCollectionView, senderUser: contactUser, body: inputText)
+            messageInputBar.inputTextView.text = ""
+        }
+    }
+    func sendButtonItemBar() {
         messageInputBar.sendButton.configure {
             $0.setSize(CGSize(width: 370, height: 36), animated: false)
             $0.isEnabled = false
@@ -49,8 +60,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         }
     }
     
-    func sendItemBar () {
-
+    func sendItemBar() {
         self.messageInputBar.inputTextView.placeholder = " Aa"
         self.messageInputBar.inputTextView.textColor = UIColor.white
         self.messageInputBar.inputTextView.beginFloatingCursor(at: CGPoint(x:20,y:20))
@@ -75,6 +85,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        messageInputBar.delegate = self
         loadMessages(sender: contactUser)
         sendItemBar()
         sendButtonItemBar()

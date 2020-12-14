@@ -10,6 +10,7 @@ target 'ShutApp' do
   pod 'Firebase/Firestore'
   pod 'SwipeCellKit'
   pod 'MessageKit'
+  pod 'MessageInputBar'
 
   target 'ShutAppTests' do
     inherit! :search_paths

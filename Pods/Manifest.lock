@@ -327,6 +327,9 @@ PODS:
     - InputBarAccessoryView/Core (= 5.2.2)
   - InputBarAccessoryView/Core (5.2.2)
   - leveldb-library (1.22)
+  - MessageInputBar (0.4.1):
+    - MessageInputBar/Core (= 0.4.1)
+  - MessageInputBar/Core (0.4.1)
   - MessageKit (3.4.2):
     - InputBarAccessoryView (~> 5.2.1)
   - nanopb (2.30906.0):
@@ -341,6 +344,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - MessageInputBar
   - MessageKit
   - SwipeCellKit
 
@@ -363,6 +367,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - InputBarAccessoryView
     - leveldb-library
+    - MessageInputBar
     - MessageKit
     - nanopb
     - PromisesObjC
@@ -386,11 +391,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   InputBarAccessoryView: 8ec44fced9840957831f7ab842e9c4fe6ff9a252
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 5ff0908bce5a7b6e11bd0b60e13a33e03697d161
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 61c4f686b8802b95ee88f3d505d0c2d0f5a06448
+PODFILE CHECKSUM: 92bae0ce9146633e42ca449fc4c335b048d4a133
 
 COCOAPODS: 1.8.4

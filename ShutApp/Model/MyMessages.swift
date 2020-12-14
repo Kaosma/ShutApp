@@ -17,11 +17,11 @@ class MyMessages {
     
     // Loading the messages from the database
     func getMessagesFromDatabase(collectionView: UICollectionView, senderUser: Sender) {
-        messages = []
         let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderEmail).collection("messages")
         
         // Reading from the "messages" Collection and ordering them by date
-        collection.order(by: "date").getDocuments() { (querySnapshot, err) in
+        collection.order(by: "date").addSnapshotListener { (querySnapshot, err) in
+            self.messages = []
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -35,12 +35,30 @@ class MyMessages {
                         } else {
                             self.messages.append(Message(sender: senderUser, messageId: document.documentID, sentDate: Date().addingTimeInterval(messageDate), kind: .text(messageBody)))
                         }
-                        // Reload the MessageCollectionView
+                        // Reload the MessageCollectionView and scroll to latest message
                         DispatchQueue.main.async {
                             collectionView.reloadData()
+                            let indexPath = IndexPath(row: 0, section: self.messages.count - 1)
+                            collectionView.scrollToItem(at: indexPath, at: .top, animated: false)
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    // Adding a message from the currentUser to the "messages" collection
+    func sendMessage(collectionView: UICollectionView, senderUser: Sender, body: String) {
+        let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderEmail).collection("messages")
+        collection.document().setData([
+            "body": body,
+            "sender": currentUser.email,
+            "date": Date().timeIntervalSince1970
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Message Sent")
             }
         }
     }
