@@ -39,25 +39,14 @@ class ContactsViewController: UIViewController {
                     let docRef = self.db.collection("users").document(contactEmail)
                     
                     docRef.getDocument { (document, error) in
-                        // If the new contact's email exists -> Add them
+                        // If the new contact's email exists -> Add the contact
                         if let document = document, document.exists {
-                            let dataDescription = document.data()
-                            if let contactId = dataDescription!["id"] as? String, let contactUsername = dataDescription!["name"] as? String {
-                                
-                                // Add contact to the user's contacts in the database
-                                let contactsCollection =
-                                    self.db.collection("users").document(self.currentUser.email).collection("contacts")
-                                contactsCollection.document(contactEmail).setData(["id": contactId as Any, "name": contactUsername as Any])
-                                
-                                self.loadContacts(willFilter: true)
-                                
-                                let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
-                                
-                                dismissAlert.addAction(UIAlertAction(title: "OK",
-                                                                     style: .cancel, handler: nil))
-
-                                self.present(dismissAlert, animated: true, completion: nil)
-                            }
+                            self.contactController.addContact(doc: document, email: contactEmail, tableView: self.contactTableView)
+                            let dismissAlert = UIAlertController(title: "Contact Added!", message: "", preferredStyle: .alert)
+                            
+                            dismissAlert.addAction(UIAlertAction(title: "OK",
+                                                                 style: .cancel, handler: nil))
+                            self.present(dismissAlert, animated: true, completion: nil)
                         // If the new contact's email doesn't exist -> Let the user know with an alert
                         } else {
                             let dismissAlert = UIAlertController(title: "User not found", message: "", preferredStyle: .alert)
