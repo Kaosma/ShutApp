@@ -75,7 +75,6 @@ class ContactsViewController: UIViewController {
         
         alert.addAction(action)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         present(alert, animated: true, completion: nil)
     }
     
@@ -143,7 +142,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let contact = self.contactController.filteredContacts[indexPath.row]
         let vc = ChatViewController()
-        vc.contactUser = Sender(senderEmail: contact.email, displayName: contact.username)
+        vc.contactUser = Sender(senderId: contact.email, displayName: contact.username)
         vc.title = contact.username
         navigationController?.pushViewController(vc, animated: true)
         

@@ -78,6 +78,10 @@
                                     <segue destination="T11-vG-Yby" kind="presentation" modalPresentationStyle="fullScreen" id="sd3-ci-XeC"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-aR-nlP">
+                                <rect key="frame" x="87" y="605" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -85,6 +89,7 @@
                     <navigationItem key="navigationItem" id="8lL-4t-tZ4"/>
                     <connections>
                         <outlet property="emailTextField" destination="Men-2b-Qjg" id="YrH-Gd-8AU"/>
+                        <outlet property="logoImage" destination="ue9-aR-nlP" id="rwe-uR-b2O"/>
                         <outlet property="passwordTextField" destination="Jwr-SH-s0z" id="3rU-7d-cx4"/>
                         <segue destination="tnJ-XP-oy5" kind="presentation" identifier="GoToContactsScreen" modalPresentationStyle="fullScreen" id="phK-Qt-xN7"/>
                     </connections>
@@ -478,29 +483,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDh-ML-5EG">
-                                <rect key="frame" x="39" y="528" width="96" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure you want to delete your profile?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0G-jS-zbs">
+                                <rect key="frame" x="39" y="543" width="339" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-0u-zLp">
-                                <rect key="frame" x="39" y="567" width="337" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-6J-hTy">
+                                <rect key="frame" x="39" y="615" width="337" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gq-jT-MLL">
-                                <rect key="frame" x="39" y="643" width="337" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Change Email">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Delete my profile"/>
                                 <connections>
-                                    <action selector="changeEmailButton:" destination="MR9-rs-ABV" eventType="touchUpInside" id="Nxn-TZ-Xti"/>
+                                    <action selector="pressedDeleteButton:" destination="MR9-rs-ABV" eventType="touchUpInside" id="wYH-yc-c1Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -509,7 +504,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="d2B-9l-skn"/>
                     <connections>
-                        <outlet property="EmailTextField" destination="dpN-0u-zLp" id="vOM-12-ehu"/>
+                        <outlet property="deleteButton" destination="5bh-6J-hTy" id="oqN-KM-WrJ"/>
                         <outlet property="nameTextField" destination="9Wp-Pq-ct2" id="irP-li-HZ0"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="signOutBackToLogin" modalPresentationStyle="fullScreen" id="gaG-9Z-bDr"/>
                     </connections>
@@ -555,7 +550,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l6e-Jf-DF5"/>
+        <segue reference="phK-Qt-xN7"/>
         <segue reference="Ims-QM-Hk9"/>
         <segue reference="gaG-9Z-bDr"/>
     </inferredMetricsTieBreakers>
