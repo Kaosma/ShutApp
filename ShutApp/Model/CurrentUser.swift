@@ -11,13 +11,9 @@ import Firebase
 
 // CurrentUser object
 
-    
-
 struct CurrentUser {
 
     let db = Firestore.firestore()
-
-    
 
     var email : String {
         var userEmail = ""
@@ -36,7 +32,6 @@ struct CurrentUser {
     }
 
     // Initiate the username
-
     var username : String {
         let docRef = self.db.collection("users").document(email)
         var name = ""
@@ -49,5 +44,54 @@ struct CurrentUser {
             }
         }
         return name
+    }
+    
+    //deleting Current User Auth
+    func deleteUser() {
+        let user = Auth.auth().currentUser
+        user?.delete { error in
+          if let error = error {
+            print(error)          }
+            else {
+            print("User was successfully deleted")
+          }
+        }
+        
+        //deleting current user from users Collection
+        let docRef = self.db.collection("users").document(email)
+        docRef.delete { error in
+          if let error = error {
+            print(error)            }
+            else {
+                print("User was successfully deleted")
+          }
+        }
+    }
+    
+    //SignOUt Current User
+    func signOutCurrentUser() {
+        do {
+            try Auth.auth().signOut()
+            } catch let err {
+                print(err)
+        }
+    }
+    
+    //Reset CurrentUser Input
+    func resetPassWordCurrentUser() {
+        let auth = Auth.auth()
+        auth.sendPasswordReset(withEmail: Auth.auth().currentUser!.email!) { (error) in
+            if let error = error {
+                print(error)
+                return
+            }else{
+                print("Password was sent successfully")
+            }
+            do {
+                try Auth.auth().signOut()
+                } catch let err {
+                    print(err)
+            }
+        }
     }
 }

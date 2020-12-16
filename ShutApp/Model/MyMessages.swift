@@ -12,12 +12,12 @@ import Firebase
 class MyMessages {
     let db = Firestore.firestore()
     let currentUser = CurrentUser()
-    let currentUserSender = Sender(senderEmail: CurrentUser().email, displayName: CurrentUser().username)
+    let currentUserSender = Sender(senderId: CurrentUser().email, displayName: CurrentUser().username)
     var messages = [Message]()
     
     // Loading the messages from the database
     func getMessagesFromDatabase(collectionView: UICollectionView, senderUser: Sender) {
-        let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderEmail).collection("messages")
+        let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderId).collection("messages")
         
         // Reading from the "messages" Collection and ordering them by date
         collection.order(by: "date").addSnapshotListener { (querySnapshot, err) in
@@ -49,7 +49,7 @@ class MyMessages {
     
     // Adding a message from the currentUser to the "messages" collection
     func sendMessage(collectionView: UICollectionView, senderUser: Sender, body: String) {
-        let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderEmail).collection("messages")
+        let collection = db.collection("users").document(currentUser.email).collection("contacts").document(senderUser.senderId).collection("messages")
         collection.document().setData([
             "body": body,
             "sender": currentUser.email,

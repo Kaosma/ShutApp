@@ -16,8 +16,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     
     let messageController = MyMessages()
     
-    let currentUser = Sender(senderEmail: CurrentUser().email, displayName: CurrentUser().username)
-    var contactUser = Sender(senderEmail: "", displayName: "")
+    let currentUser = Sender(senderId: CurrentUser().email, displayName: CurrentUser().username)
+    var contactUser = Sender(senderId: "", displayName: "")
 
     func currentSender () -> SenderType  {
         return currentUser
