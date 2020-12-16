@@ -14,4 +14,5 @@ struct Contact {
     let username : String
     let email : String
     let id : String
+    let conversationId : String
 }

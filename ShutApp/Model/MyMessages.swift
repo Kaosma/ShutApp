@@ -12,7 +12,7 @@ import Firebase
 class MyMessages {
     let db = Firestore.firestore()
     let currentUser = CurrentUser()
-    let currentUserSender = Sender(senderId: CurrentUser().email, displayName: CurrentUser().username, email: CurrentUser().email)
+    let currentUserSender = Sender(senderId: CurrentUser().email, displayName: CurrentUser().username, senderEmail: CurrentUser().email)
     var messages = [Message]()
     
     // Loading the messages from the database
@@ -48,7 +48,7 @@ class MyMessages {
     }
     
     func myUserInContacts(sender: Sender) -> Bool {
-        let docRef = db.collection("users").document(sender.email).collection("contacts").document(currentUser.email)
+        let docRef = db.collection("users").document(sender.senderEmail).collection("contacts").document(currentUser.email)
         var exists = false
         docRef.getDocument { (document, error) in
             // If the new contact's email exists -> Add the contact

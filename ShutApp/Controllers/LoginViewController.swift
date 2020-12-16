@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
               }
             }
           }
-    */
+    
     
     func loadImageUsingCacheWithUrlString(_ urlString: String)  {
         let imageCache = NSCache<NSString, UIImage>()
@@ -99,5 +99,5 @@ class LoginViewController: UIViewController {
                 }
             })
         }).resume()
-    }
+    }*/
 }

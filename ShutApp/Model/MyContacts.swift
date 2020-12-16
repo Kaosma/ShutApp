@@ -26,6 +26,7 @@ class MyContacts {
     }
     
     func addContact(doc: DocumentSnapshot, email: String, tableView: UITableView) {
+        print("hej")
         let dataDescription = doc.data()
         if let contactId = dataDescription!["id"] as? String, let contactUsername = dataDescription!["name"] as? String {
             let conversationsCollection = db.collection("conversations").addDocument(data: [
